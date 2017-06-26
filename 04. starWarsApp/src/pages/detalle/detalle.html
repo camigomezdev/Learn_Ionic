@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>
+      {{personaje.nombre}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding text-center>
+
+  <img [src]="personaje.img">
+  <h1>{{personaje.nombre}}</h1>
+  <p>{{personaje.titulo}}</p>
+  <button ion-button block color="dark" (click)="regresar()">
+    Regresar
+  </button>
+
+</ion-content>

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="dark" text-center>
+    <ion-title>
+      Star Wars
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let personaje of personajesArreglo" [navPush]=detalle [navParams]="{ 'personaje': personaje }">
+
+      <ion-avatar item-start>
+        <img [src]="personaje.img">
+      </ion-avatar>
+      <h1>{{personaje.nombre}}</h1>
+      <p>{{personaje.titulo}}</p>
+
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-content>
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons>
+
+      <button ion-button color="dark" (click)="cerrarModal()">
+        Cerrar
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-footer>

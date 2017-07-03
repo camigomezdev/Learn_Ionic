@@ -3,22 +3,52 @@ import { ModalController } from 'ionic-angular';
 
 import { SubirPage } from "../subir/subir";
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+//providers
+import { CargaArchivosProvider } from "../../providers/carga-archivos/carga-archivos";
+import { AuthServiceProvider } from "../../providers/auth-service/auth-service";
+
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  posts: FirebaseListObservable<any[]>;
 
-  constructor(private modalCtrl: ModalController, private afDB: AngularFireDatabase) {
-      this.posts = afDB.list('/posts');
+  hayMas:boolean = true;
+
+  constructor(private modalCtrl: ModalController,
+              private caService: CargaArchivosProvider,
+              private _auth: AuthServiceProvider) {
+        this.caService.cargar_imagenes();
+  }
+
+  cargar_siguiente(infiniteScroll:any){
+      console.log("Siguientes");
+      this.caService.cargar_imagenes()
+          .then(
+            ( existenMas:boolean )=>{
+              infiniteScroll.complete();
+              this.hayMas = existenMas;
+            }
+          );
   }
 
   mostrar_modal(){
       let modal = this.modalCtrl.create(SubirPage);
       modal.present();
+  }
+
+  salir(){
+    this._auth.signOut();
+  }
+
+  iniciar(): void {
+    this._auth.signInWithFacebook()
+      .then(() => this.onSignInSuccess());
+  }
+
+  private onSignInSuccess(): void {
+    console.log("Facebook nombre: ",this._auth.displayName());
   }
 
 }

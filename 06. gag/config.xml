@@ -77,12 +77,20 @@
         <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
         <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
     </platform>
-    <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
-    <plugin name="cordova-plugin-whitelist" spec="1.3.1" />
-    <plugin name="cordova-plugin-console" spec="1.0.5" />
-    <plugin name="cordova-plugin-statusbar" spec="2.2.2" />
-    <plugin name="cordova-plugin-device" spec="1.1.4" />
-    <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
+    <engine name="android" spec="^6.2.3" />
+    <plugin name="com.synconset.imagepicker" spec="https://github.com/dhavalsoni2001/ImagePicker.git">
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="my message" />
+    </plugin>
     <plugin name="cordova-plugin-camera" spec="^2.4.1" />
-    <engine name="android" spec="~6.2.3" />
+    <plugin name="cordova-plugin-console" spec="^1.0.5" />
+    <plugin name="cordova-plugin-device" spec="^1.1.4" />
+    <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
+        <variable name="APP_ID" value="127087861219952" />
+        <variable name="APP_NAME" value="8gag_curso" />
+    </plugin>
+    <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />
+    <plugin name="cordova-plugin-statusbar" spec="^2.2.2" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.1" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^5.1.8" />
+    <plugin name="ionic-plugin-keyboard" spec="^2.2.1" />
 </widget>

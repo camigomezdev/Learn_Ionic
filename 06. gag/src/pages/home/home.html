@@ -1,14 +1,28 @@
 <ion-header>
-  <ion-navbar color="dark">
+  <ion-navbar color="dark" center>
     <ion-title>
       8gag
     </ion-title>
+
+    <ion-buttons end>
+      <button ion-button
+              *ngIf="!_auth.authenticated"
+              (click)="iniciar()">
+          Ingresar
+      </button>
+
+      <button ion-button
+              *ngIf="_auth.authenticated"
+              (click)="salir()">
+          Salir
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content >
 
-  <ion-card *ngFor="let post of posts | async">
+  <ion-card *ngFor="let post of caService.imagenes">
     <img [src]="post.img">
     <ion-card-content>
       <ion-card-title>
@@ -17,7 +31,9 @@
 
       <ion-row>
         <ion-col text-right>
-          <button ion-button clear small color="primary" icon-left>
+          <button ion-button clear small color="primary"
+                  icon-left
+                  (click)="caService.compartir(post.titulo, post.img)">
             <ion-icon name="share-alt"></ion-icon>
             Compartir
           </button>
@@ -27,11 +43,12 @@
   </ion-card>
 
 
-
-
-
-  <ion-fab bottom right>
+  <ion-fab bottom right *ngIf="_auth.authenticated">
     <button ion-fab color="danger"
             (click)="mostrar_modal()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
+
+  <ion-infinite-scroll (ionInfinite)="cargar_siguiente($event)" [enabled]="hayMas">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+   </ion-infinite-scroll>
 </ion-content>

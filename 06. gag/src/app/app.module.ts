@@ -17,6 +17,10 @@ import { PlaceholderPipe } from '../pipes/placeholder/placeholder';
 
 import { Camera } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { CargaArchivosProvider } from '../providers/carga-archivos/carga-archivos';
+import { AuthServiceProvider } from '../providers/auth-service/auth-service';
+import { Facebook } from '@ionic-native/facebook';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { ImagePicker } from '@ionic-native/image-picker';
     SplashScreen,
     Camera,
     ImagePicker,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    SocialSharing,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    CargaArchivosProvider,
+    AuthServiceProvider,
+    Facebook
   ]
 })
 export class AppModule {}

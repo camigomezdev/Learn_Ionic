@@ -7,6 +7,13 @@
     </ion-buttons>
 
     <ion-title>{{ titulo | placeholder:"Crear Post" }}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button [disabled]= "img.length<2 || titulo.length<2"
+              (click)="crear_post()">
+        Crear post
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -28,7 +35,7 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button ion-button block icon-left>
+        <button ion-button block icon-left (click)="mostrar_album()">
             <ion-icon name="photos"></ion-icon>
             Seleccionar
         </button>

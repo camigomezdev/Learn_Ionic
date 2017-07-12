@@ -27,7 +27,11 @@ export class AjustesServicesProvider {
               console.log("Storage listo");
               this.storage.get("ajustes")
                   .then( (ajustes)=> {
-                    this.ajustes = ajustes;
+
+                    if(ajustes){
+                      this.ajustes = ajustes;
+
+                    }
                     resolve();
                   });
             });

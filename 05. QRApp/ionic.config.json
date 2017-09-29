@@ -1,5 +1,6 @@
 {
   "name": "QRApp",
-  "app_id": "8407b36b",
-  "type": "ionic-angular"
+  "app_id": "779e026f",
+  "type": "ionic-angular",
+  "integrations": {}
 }

@@ -1,5 +1,6 @@
 {
   "name": "gag",
-  "app_id": "",
-  "type": "ionic-angular"
+  "app_id": "48bd4a1e",
+  "type": "ionic-angular",
+  "integrations": {}
 }

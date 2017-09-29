@@ -1,5 +1,6 @@
 {
   "name": "navegacion",
-  "app_id": "59b084bc",
-  "type": "ionic-angular"
+  "app_id": "0243c89a",
+  "type": "ionic-angular",
+  "integrations": {}
 }

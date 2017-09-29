@@ -1,5 +1,6 @@
 {
   "name": "sonidosAnimales",
-  "app_id": "ddae0dd2",
-  "type": "ionic-angular"
+  "app_id": "248ff9cc",
+  "type": "ionic-angular",
+  "integrations": {}
 }
